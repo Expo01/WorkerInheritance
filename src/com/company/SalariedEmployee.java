@@ -1,23 +1,24 @@
-//package com.company;
-//
-//public class SalariedEmployee extends Employee {
-//
-//    private double annualSalary;
-//    private boolean isRetired;
-//
-//    public SalariedEmployee(String name, String birthDate, String endDate, long employeeID, String hireDate, double annualSalary, boolean isRetired) {
-//        super(name, birthDate, endDate, employeeID, hireDate);
-//        this.annualSalary = annualSalary;
-//        this.isRetired = isRetired;
-//    }
-//
-//    public void retire() {
-//        if (isRetired) {
-//            System.out.println("is retired");
-//        } else {
-//            System.out.println("is not retired");
-//        }
-//    }
-//
-//
-//}
+package com.company;
+
+public class SalariedEmployee extends Employee {
+
+    private double annualSalary;
+    private boolean isRetired; //this is initialized to 'false' by default
+
+    public SalariedEmployee(String name, String birthDate, String hireDate, double annualSalary) {
+        super(name, birthDate, hireDate);
+        this.annualSalary = annualSalary;
+    }
+
+    public void retire() {
+        terminate("12/12/2025");
+        isRetired = true;
+    }
+
+    @Override
+    public double collectPay() {
+        double paycheck = annualSalary/26; //biweekly pay
+        double adjustedPay = (isRetired) ? 0.9 * paycheck : paycheck;
+        return  (int) adjustedPay;
+    }
+}

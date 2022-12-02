@@ -17,5 +17,15 @@ public class Main {
         Employee joe = new Employee("Joe", "11/11/1990", "03/03/2020");
         System.out.println(joe);
 
+        SalariedEmployee twinOfJoe = new SalariedEmployee("JoeShmo", "11/11/1990", "03/03/2020", 35000);
+        System.out.println(twinOfJoe);
+        System.out.println("Joeshmo paycheck = " + twinOfJoe.collectPay());
+        twinOfJoe.retire();
+        System.out.println("Joeshmo's pension check = $" + twinOfJoe.collectPay());
+
+        HourlyEmployee mary = new HourlyEmployee("Mary", "05/05/1970", "03/03/2021", 15);
+        System.out.println(mary);
+        System.out.println("Mary's Paycheck = $" + mary.collectPay());
+        System.out.println("Mary's holiday pay = $" + mary.getDoublePay());
     }
 }

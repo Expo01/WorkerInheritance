@@ -20,7 +20,7 @@ public class Worker {
     public int getAge(){
        int dateAsInt = Integer.parseInt(birthDate.substring(6));
        // .substring converts xx/xx/xxxx format and starts with year at index 6.
-       int currentYar = 2022;
+       int currentYar = 2025;
         int age = currentYar - dateAsInt;
        return age;
     }
